@@ -1,0 +1,35 @@
+{
+  "name": "tianqi/dingding",
+  "description": "Dingding for php",
+  "keywords": ["dingding", "php", "sdk"],
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "tianqi",
+      "email": "i@ltq.im",
+      "homepage": "https://ltq.im"
+    }
+  ],
+  "require": {
+    "php": ">5.3",
+    "ext-curl": "*",
+    "nategood/httpful": "*"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^4.8.35 || ^5.7 || ^6.4 || ^7.0",
+    "satooshi/php-coveralls": ">=1.0",
+    "ext-curl": "*"
+  },
+  "autoload": {
+    "files": ["src/functions.php"],
+    "psr-4": {
+      "Tianqi\\Dingding\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Tianqi\\Tests\\": "tests/"
+    }
+  }
+}
