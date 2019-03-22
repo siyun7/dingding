@@ -31,5 +31,12 @@
     "psr-4": {
       "Tianqi\\Tests\\": "tests/"
     }
-  }
+  },
+  "extra": {
+    "component": "package",
+    "branch-alias": {
+      "dev-master": "1.0.x-dev"
+    }
+  },
+  "minimum-stability": "stable"
 }
