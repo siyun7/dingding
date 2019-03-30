@@ -1,8 +1,8 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: l57t7q
- * Date: 2017/12/21
+ * User: tianqi
+ * Date: 2019/03/25
  * Time: 15:15
  */
 
@@ -20,8 +20,8 @@ class ServiceProvider extends LaravelServiceProvider
 
     public function register() {
         $this->mergeConfigFrom(__DIR__."/config.php", "dingding");
-        $this->app->bind(AliyunSms::class, function () {
-            return new AliyunSms();
+        $this->app->bind(Dingding::class, function () {
+            return new Dingding();
         });
     }
 
