@@ -314,4 +314,66 @@ class Dingding
         return $resp;
     }
 
+    /**
+     * User: Tianqi
+     * Date: 2019/4/1
+     * Time: 13:33
+     * 获取子部门ID列表
+     * @param $params
+     * @return mixed
+     */
+    public function getDeptListIds($params)
+    {
+        $path = "/department/list_ids";
+        $data = [
+            "access_token" => $this->_acceccToken,
+            "id" => $params["id"],
+        ];
+        $resp = Http::get($path, $data);
+
+        return $resp;
+    }
+
+    /**
+     * User: Tianqi
+     * Date: 2019/4/1
+     * Time: 13:34
+     * 获取部门列表
+     * @param $params
+     * @return mixed
+     */
+    public function getDeptList($params)
+    {
+        $path = "/department/list";
+        if (!isset($params["fetch_child"]) || !$params["fetch_child"]) $params["fetch_child"] = false;
+        $data = [
+            "access_token" => $this->_acceccToken,
+            "id" => $params["id"],
+        ];
+        $resp = Http::get($path, $data);
+
+        return $resp;
+    }
+
+    /**
+     * User: Tianqi
+     * Date: 2019/4/1
+     * Time: 13:35
+     * 获取部门详情
+     * @param $params
+     * @return mixed
+     */
+    public function getDept($params)
+    {
+        $path = "/department/list";
+        if (!isset($params["fetch_child"]) || !$params["fetch_child"]) $params["fetch_child"] = false;
+        $data = [
+            "access_token" => $this->_acceccToken,
+            "id" => $params["id"],
+        ];
+        $resp = Http::get($path, $data);
+
+        return $resp;
+    }
+
 }
