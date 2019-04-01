@@ -66,8 +66,7 @@ class Dingding
     {
         $path = "/topapi/processinstance/get";
         $datas = [
-            "process_code" => $params["processCode"],
-            "start_time" => $params["startTime"],
+            "process_instance_id" => $params["processId"],
         ];
         $resp = Http::post($path, $this->_params, $datas);
         return $resp;

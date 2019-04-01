@@ -1,6 +1,6 @@
 {
   "name": "tianqi/dingding",
-  "description": "钉钉（钉钉）企业EAPP开发工具拓展包",
+  "description": "钉钉（DingDing）企业EAPP开发工具拓展包",
   "keywords": ["dingding", "php", "sdk", "钉钉", "企业开发", "EAPP"],
   "type": "library",
   "license": "MIT",
