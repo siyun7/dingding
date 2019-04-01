@@ -514,4 +514,44 @@ class Dingding
         return $resp;
     }
 
+    /**
+     * User: Tianqi
+     * Date: 2019/4/1
+     * Time: 13:44
+     * 获取用户待审批数量
+     * @param $params
+     * @return mixed
+     */
+    public function getTodoNum($params)
+    {
+        $path = "/topapi/process/gettodonum";
+        $data = [
+            "userid" => $params["userId"],
+        ];
+        $resp = Http::post($path, $this->_params, $data);
+
+        return $resp;
+    }
+
+    /**
+     * User: Tianqi
+     * Date: 2019/4/1
+     * Time: 13:45
+     * 获取用户可见的审批模板
+     * @param $params
+     * @return mixed
+     */
+    public function getProcessListByUserId($params)
+    {
+        $path = "/topapi/process/listbyuserid";
+        $data = [
+            "userid" => $params["userId"],
+            "offset" => $params["offset"],
+            "size" => $params["size"],
+        ];
+        $resp = Http::post($path, $this->_params, $data);
+
+        return $resp;
+    }
+
 }
