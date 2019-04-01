@@ -59,6 +59,96 @@ composer require tianqi/dingding
 
      $params = ["authCode" => "authCode"];
      $dingding->getUser($params);     
+     
+#### 获取管理员列表
+
+     $dingding->getAdmin();       
+     
+#### 获取管理员通讯录权限范围
+
+     $params = ["userId" => "userId"];
+     $dingding->getAdminScope($params);          
+      
+#### 获取用户详情
+
+     $params = ["authCode" => "authCode"];
+     $dingding->getUser($params);     
+
+#### 根据unionid获取userid
+
+     $params = ["unionid" => "unionid"];
+     $dingding->getUseridByUnionid($params);     
+
+#### 创建用户
+
+     $dingding->createUser($params);          
+      
+#### 更新用户
+
+     $dingding->updateUser($params);     
+
+#### 获取用户详情
+
+     $params = ["authCode" => "authCode"];
+     $dingding->getUser($params);                 
+                
+#### 删除用户
+
+     $params = ["userid" => "userid"];
+     $dingding->deleteUser($params);          
+      
+#### 获取子部门ID列表
+
+     $params = ["id" => "id"];
+     $dingding->getDeptListIds($params);     
+
+#### 获取部门列表
+
+     $params = ["id" => "id"];
+     $dingding->getDeptList($params);                 
+ 
+#### 获取部门详情
+
+     $params = ["getDept" => "getDept"];
+     $dingding->getDept($params);          
+      
+#### 查询部门的所有上级父部门路径
+
+     $params = ["id" => "id"];
+     $dingding->listParentDeptsByDept($params);     
+
+#### 查询指定用户的所有上级父部门路径
+
+     $params = ["userId" => "userId"];
+     $dingding->listParentDepts($params);  
+  
+#### 获取企业员工人数
+
+     $params = ["onlyActive" => "onlyActive"];
+     $dingding->getOrgUserCount($params);                 
+ 
+#### 创建部门
+
+     $dingding->createDepartment($params);          
+      
+#### 更新部门
+
+     $dingding->updateDepartment($params);     
+
+#### 删除部门
+
+     $params = ["id" => "id"];
+     $dingding->deleteDepartment($params);    
+           
+#### 获取用户待审批数量
+
+     $params = ["userid" => "userid"];
+     $dingding->getTodoNum($params);          
+      
+#### 获取用户可见的审批模板
+
+     $params = ["userid" => "userid", "offset" => "offset", "size" => "size"];
+     $dingding->deleteDepartment($params);               
                  
 ### 问题反馈
 
