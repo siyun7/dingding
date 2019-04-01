@@ -376,4 +376,142 @@ class Dingding
         return $resp;
     }
 
+    /**
+     * User: Tianqi
+     * Date: 2019/4/1
+     * Time: 13:37
+     * 查询部门的所有上级父部门路径
+     * @param $params
+     * @return mixed
+     */
+    public function listParentDeptsByDept($params)
+    {
+        $path = "/department/list_parent_depts_by_dept";
+        $data = [
+            "access_token" => $this->_acceccToken,
+            "id" => $params["id"],
+        ];
+        $resp = Http::get($path, $data);
+
+        return $resp;
+    }
+
+    /**
+     * User: Tianqi
+     * Date: 2019/4/1
+     * Time: 13:37
+     * 查询指定用户的所有上级父部门路径
+     * @param $params
+     * @return mixed
+     */
+    public function listParentDepts($params)
+    {
+        $path = "/department/list_parent_depts";
+        $data = [
+            "access_token" => $this->_acceccToken,
+            "userId" => $params["userId"],
+        ];
+        $resp = Http::get($path, $data);
+
+        return $resp;
+    }
+
+    /**
+     * User: Tianqi
+     * Date: 2019/4/1
+     * Time: 13:38
+     * 获取企业员工人数
+     * @param $params
+     * @return mixed
+     */
+    public function getOrgUserCount($params)
+    {
+        $path = "/user/get_org_user_count";
+        $data = [
+            "access_token" => $this->_acceccToken,
+            "onlyActive" => $params["onlyActive"],
+        ];
+        $resp = Http::get($path, $data);
+
+        return $resp;
+    }
+
+    /**
+     * User: Tianqi
+     * Date: 2019/4/1
+     * Time: 13:40
+     * 创建部门
+     * @param $params
+     * @return mixed
+     */
+    public function createDepartment($params)
+    {
+        $path = "/department/create";
+        $data = [
+            "name" => $params["name"],
+            "parentid" => $params["parentid"],
+            "order" => $params["order"],
+            "createDeptGroup" => $params["createDeptGroup"],
+            "deptHiding" => $params["deptHiding"],
+            "deptPermits" => $params["deptPermits"],
+            "userPermits" => $params["userPermits"],
+            "outerDept" => $params["outerDept"],
+            "outerPermitDepts" => $params["outerPermitDepts"],
+            "outerPermitUsers" => $params["outerPermitUsers"],
+            "sourceIdentifier" => $params["sourceIdentifier"],
+        ];
+        $resp = Http::post($path, $this->_params, $data);
+
+        return $resp;
+    }
+
+    /**
+     * User: Tianqi
+     * Date: 2019/4/1
+     * Time: 13:41
+     * 更新部门
+     * @param $params
+     * @return mixed
+     */
+    public function updateDepartment($params)
+    {
+        $path = "/department/update";
+        $data = [
+            "name" => $params["name"],
+            "parentid" => $params["parentid"],
+            "order" => $params["order"],
+            "createDeptGroup" => $params["createDeptGroup"],
+            "deptHiding" => $params["deptHiding"],
+            "deptPermits" => $params["deptPermits"],
+            "userPermits" => $params["userPermits"],
+            "outerDept" => $params["outerDept"],
+            "outerPermitDepts" => $params["outerPermitDepts"],
+            "outerPermitUsers" => $params["outerPermitUsers"],
+            "sourceIdentifier" => $params["sourceIdentifier"],
+        ];
+        $resp = Http::post($path, $this->_params, $data);
+
+        return $resp;
+    }
+
+    /**
+     * User: Tianqi
+     * Date: 2019/4/1
+     * Time: 13:42
+     * 删除部门
+     * @param $params
+     * @return mixed
+     */
+    public function deleteDepartment($params)
+    {
+        $path = "/department/delete";
+        $data = [
+            "access_token" => $this->_acceccToken,
+            "id" => $params["id"],
+        ];
+        $resp = Http::get($path, $data);
+
+        return $resp;
+    }
+
 }
