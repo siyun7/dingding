@@ -33,6 +33,13 @@ class Dingding
         }
     }
 
+    /**
+     * User: Tianqi
+     * Date: 2019/4/1
+     * Time: 13:46
+     * 获取access_token
+     * @return mixed
+     */
     public function getAccessToken()
     {
         $path = "/gettoken";
@@ -51,6 +58,14 @@ class Dingding
         return $resp;
     }
 
+    /**
+     * User: Tianqi
+     * Date: 2019/4/1
+     * Time: 13:47
+     * 批量获取审批实例id
+     * @param $params
+     * @return mixed
+     */
     public function getProcessListIds($params)
     {
         $path = "/topapi/processinstance/listids";
@@ -63,6 +78,14 @@ class Dingding
 
     }
 
+    /**
+     * User: Tianqi
+     * Date: 2019/4/1
+     * Time: 13:47
+     * 获取单个审批实例
+     * @param $params
+     * @return mixed
+     */
     public function getProcess($params)
     {
         $path = "/topapi/processinstance/get";
@@ -73,12 +96,27 @@ class Dingding
         return $resp;
     }
 
+    /**
+     * User: Tianqi
+     * Date: 2019/4/1
+     * Time: 13:47
+     * 发起审批实例
+     * @param $params
+     */
     public function createPeocess($params)
     {
         $path = "/topapi/processinstance/create";
         Http::post($path, $this->_params, $params);
     }
 
+    /**
+     * User: Tianqi
+     * Date: 2019/4/1
+     * Time: 13:47
+     * 获取用户详情
+     * @param $params
+     * @return mixed
+     */
     public function getUserInfo($params)
     {
         $path = "/user/getuserinfo";
@@ -91,6 +129,14 @@ class Dingding
         return $resp;
     }
 
+    /**
+     * User: Tianqi
+     * Date: 2019/4/1
+     * Time: 13:48
+     * 获取用户详情
+     * @param $params
+     * @return mixed
+     */
     public function getUser($params)
     {
         $path = "/user/get";
