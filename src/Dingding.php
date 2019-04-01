@@ -294,6 +294,14 @@ class Dingding
         return $resp;
     }
 
+    /**
+     * User: Tianqi
+     * Date: 2019/4/1
+     * Time: 13:30
+     * 删除用户
+     * @param $params
+     * @return mixed
+     */
     public function deleteUser($params)
     {
         $path = "/user/create";
