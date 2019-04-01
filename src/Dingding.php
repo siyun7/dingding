@@ -45,6 +45,7 @@ class Dingding
         if ($resp->errcode == 0) {
             $this->_acceccToken = $resp->access_token;
             $this->_config["access_token"] = $resp->access_token;
+            $this->_params["access_token"] = $resp->access_token;
         }
 
         return $resp;
