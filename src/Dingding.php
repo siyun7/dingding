@@ -103,5 +103,207 @@ class Dingding
         return $resp;
     }
 
+    /**
+     * User: Tianqi
+     * Date: 2019/4/1
+     * Time: 13:21
+     * 获取部门用户userid列表
+     * @param $params
+     * @return mixed
+     */
+    public function getDeptMember($params)
+    {
+        $path = "/user/get";
+        $data = [
+            "access_token" => $this->_acceccToken,
+            "deptId" => $params["deptId"]
+        ];
+        $resp = Http::get($path, $data);
+
+        return $resp;
+    }
+
+
+    /**
+     * User: Tianqi
+     * Date: 2019/4/1
+     * Time: 13:23
+     * 获取部门用户
+     * @param $params
+     * @return mixed
+     */
+    public function getSimplelist($params)
+    {
+        $path = "/user/simplelist";
+        $data = [
+            "access_token" => $this->_acceccToken,
+            "department_id" => $params["deptId"],
+            "lang" => $params["lang"],
+            "offset" => $params["offset"],
+            "size" => $params["size"],
+            "order" => $params["order"],
+        ];
+        $resp = Http::get($path, $data);
+
+        return $resp;
+    }
+
+    /**
+     * User: Tianqi
+     * Date: 2019/4/1
+     * Time: 13:23
+     * 获取部门用户详情
+     * @param $params
+     * @return mixed
+     */
+    public function getListbypage($params)
+    {
+        $path = "/user/listbypage";
+        $data = [
+            "access_token" => $this->_acceccToken,
+            "department_id" => $params["deptId"],
+            "lang" => $params["lang"],
+            "offset" => $params["offset"],
+            "size" => $params["size"],
+            "order" => $params["order"],
+        ];
+        $resp = Http::get($path, $data);
+
+        return $resp;
+    }
+
+    /**
+     * User: Tianqi
+     * Date: 2019/4/1
+     * Time: 13:24
+     * 获取管理员列表
+     * @return mixed
+     */
+    public function getAdmin()
+    {
+        $path = "/user/get_admin";
+        $data = [
+            "access_token" => $this->_acceccToken
+        ];
+        $resp = Http::get($path, $data);
+
+        return $resp;
+    }
+
+    /**
+     * User: Tianqi
+     * Date: 2019/4/1
+     * Time: 13:25
+     * 获取管理员通讯录权限范围
+     * @param $params
+     * @return mixed
+     */
+    public function getAdminScope($params)
+    {
+        $path = "/user/get_admin";
+        $data = [
+            "access_token" => $this->_acceccToken,
+            "userid" => $params["userId"],
+        ];
+        $resp = Http::get($path, $data);
+
+        return $resp;
+    }
+
+    /**
+     * User: Tianqi
+     * Date: 2019/4/1
+     * Time: 13:25
+     * 根据unionid获取userid
+     * @param $params
+     * @return mixed
+     */
+    public function getUseridByUnionid($params)
+    {
+        $path = "/user/get_admin";
+        $data = [
+            "access_token" => $this->_acceccToken,
+            "unionid" => $params["unionId"],
+        ];
+        $resp = Http::get($path, $data);
+
+        return $resp;
+    }
+
+    /**
+     * User: Tianqi
+     * Date: 2019/4/1
+     * Time: 13:28
+     * 创建用户
+     * @param $params
+     * @return mixed
+     */
+    public function createUser($params)
+    {
+        $path = "/user/create";
+        $data = [
+            "userid" => $params["userID"],
+            "name" => $params["name"],
+            "orderInDepts" => $params["orderInDepts"],
+            "department" => $params["department"],
+            "position" => $params["position"],
+            "mobile" => $params["mobile"],
+            "tel" => $params["tel"],
+            "workPlace" => $params["workPlace"],
+            "remark" => $params["remark"],
+            "email" => $params["email"],
+            "orgEmail" => $params["orgEmail"],
+            "jobnumber" => $params["jobnumber"],
+            "isHide" => $params["isHide"],
+            "isSenior" => $params["isSenior"],
+        ];
+        $resp = Http::post($path, $this->_params, $data);
+
+        return $resp;
+    }
+
+    /**
+     * User: Tianqi
+     * Date: 2019/4/1
+     * Time: 13:29
+     * 更新用户
+     * @param $params
+     * @return mixed
+     */
+    public function updateUser($params)
+    {
+        $path = "/user/create";
+        $data = [
+            "userid" => $params["userID"],
+            "name" => $params["name"],
+            "orderInDepts" => $params["orderInDepts"],
+            "department" => $params["department"],
+            "position" => $params["position"],
+            "mobile" => $params["mobile"],
+            "tel" => $params["tel"],
+            "workPlace" => $params["workPlace"],
+            "remark" => $params["remark"],
+            "email" => $params["email"],
+            "orgEmail" => $params["orgEmail"],
+            "jobnumber" => $params["jobnumber"],
+            "isHide" => $params["isHide"],
+            "isSenior" => $params["isSenior"],
+        ];
+        $resp = Http::post($path, $this->_params, $data);
+
+        return $resp;
+    }
+
+    public function deleteUser($params)
+    {
+        $path = "/user/create";
+        $data = [
+            "access_token" => $this->_acceccToken,
+            "userid" => $params["userID"],
+        ];
+        $resp = Http::get($path, $data);
+
+        return $resp;
+    }
 
 }
