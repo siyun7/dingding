@@ -152,7 +152,7 @@ composer require tianqi/dingding
                  
 ### 问题反馈
 
-　　任何问题欢迎在[Issues](https://github.com/l57t7q/dingding/issues) 中反馈，如果没有账号可以去 我的[博客](https://ltq.ime)中留言。
+　　任何问题欢迎在[Issues](https://github.com/l57t7q/dingding/issues) 中反馈，如果没有账号可以去 我的[博客](https://ltq.im)中留言。
 
 　　你的反馈会让此项目变得更加完美。
 
